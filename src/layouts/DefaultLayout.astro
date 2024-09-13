@@ -6,11 +6,10 @@ import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
 
 const {
-  title = 'Astro',
-  description = 'A starter project with accessibility features using Astro static site builder. Contains accessible landmarks, skip links, a dark mode color scheme, better focus outline and keyboard menu navigation.',
-  url,
+  title = 'Valerie Nuzzolo',
+  description = 'A space to get to know Valerie Nuzzolo, clarinetist and educator. Learn who she is and why she pursues music, listen or watch her perform, see and save upcoming performances to your calendar, or contact her for any reason.',
   image = '/social-preview-image.png',
-  author = 'Mark Teekman',
+  author = 'Emma Grey',
 } = Astro.props
 ---
 
@@ -33,12 +32,15 @@ const {
       author={author}
     />
   </head>
+  
   <body>
+
     <Header />
     <main id="main-content" transition:animate="fade">
       <slot />
     </main>
     <Footer />
+
     <style lang="scss" is:global>
       // theme settings
       :root {
@@ -46,25 +48,25 @@ const {
         --radius-large: 6px;
         --gap-default: 2rem;
         --font-measure: 70ch;
-        --font-family-default: 'Open Sans', sans-serif;
-        --font-family-special: 'Open Sans', sans-serif;
+        --font-family-default: 'Mukta';
+        --font-family-special: 'Jacques Francois';
         // light theme
-        --font-color: var(--neutral-900);
-        --action-color: var(--primary-300);
+        --font-color: var(--dark-100);
+        --action-color: var(--dark-100);
         --action-color-state: var(--primary-500);
-        --background: var(--neutral-100);
-        --primary-background: var(--primary-100);
-        --neutral-background: var(--neutral-200);
+        --background: var(--primary-600);
+        --primary-background: var(--primary-600);
+        --neutral-background: var(--neutral-600);
       }
 
       // dark color scheme overrides
       .darkmode {
-        --font-color: var(--neutral-100);
-        --action-color: var(--secondary-100);
+        --font-color: var(--primary-600);
+        --action-color: var(--primary-600);
         --action-color-state: var(--secondary-500);
         --background: var(--dark-100);
-        --primary-background: var(--primary-500);
-        --neutral-background: var(--neutral-900);
+        --primary-background: var(--dark-100);
+        --neutral-background: var(--dark-100);
       }
 
       // sticky footer on low content pages

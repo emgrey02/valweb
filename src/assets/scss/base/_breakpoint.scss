@@ -15,7 +15,7 @@ $breakpoints: (
       @content;
     }
   } @else if (type_of($breakpoint) == number) {
-    @media (min-width: $breakpoint+"px") {
+    @media (min-width: ($breakpoint+"px")) {
       @content;
     }
   }
