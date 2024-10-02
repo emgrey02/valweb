@@ -7,7 +7,7 @@ import Footer from '../components/Footer.astro'
 
 const {
   title = 'Valerie Nuzzolo',
-  description = 'A space to get to know Valerie Nuzzolo, clarinetist and educator. Learn who she is and why she pursues music, listen or watch her perform, see and save upcoming performances to your calendar, or contact her for any reason.',
+  description = 'A space to get to know Valerie Nuzzolo, clarinetist and educator. Learn who she is and why she pursues music, listen or watch her perform, see and save upcoming performances to your calendar, or get in touch for any reason.',
   image = '/social-preview-image.png',
   author = 'Emma Grey',
 } = Astro.props
@@ -18,6 +18,7 @@ const {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
 
     <!-- favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -31,6 +32,8 @@ const {
       image={image}
       author={author}
     />
+
+    
   </head>
   
   <body>
@@ -56,7 +59,7 @@ const {
         --action-color-state: var(--primary-500);
         --background: var(--primary-600);
         --primary-background: var(--primary-600);
-        --neutral-background: var(--neutral-600);
+        --neutral-background: var(--primary-600);
       }
 
       // dark color scheme overrides

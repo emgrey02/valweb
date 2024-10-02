@@ -8,8 +8,8 @@ import logo from '../assets/img/logo.svg'
 <div id="main-navigation" class="is-desktop py-8">
   <div class="container">
     <a href="/" class="flex items-center gap-2 !no-underline">
-      <Image src={logo} alt="Your Logo" width="47" height="37" />
-      <span class="font-bold">Valerie Nuzzolo</span>
+      <Image src={logo} alt="Valerie Nuzzolo Logo" width="47" height="37" />
+      <!-- <span id="navbar-name" class="text-2xl">Valerie Nuzzolo</span> -->
     </a>
     <div class="wrapper">
       <nav class="desktop-menu" aria-label="Main navigation desktop">
@@ -31,45 +31,47 @@ import logo from '../assets/img/logo.svg'
 <script>
   document.addEventListener('astro:page-load', () => {
     // variables
-    const mainNav = document.querySelector('#main-navigation')
-    const mainMenu = mainNav.querySelector('ul')
-    const dropdownMenus = [...document.querySelectorAll('.has-dropdown button')]
+    const mainNav = document.querySelector('#main-navigation');
+   
+      const mainMenu = mainNav?.querySelector('ul')
 
-    // functions
-    const setActiveMenuItem = () => {
-      const mobileDesktopMenus = mainNav.querySelectorAll('nav > ul')
-      const currenPathname = window.location.pathname
-
-      mobileDesktopMenus.forEach((menu) => {
-        const menuItems = [...menu.querySelectorAll('a:not([rel*="external"])')] as HTMLAnchorElement[]
-
-        menuItems.forEach((menuItem) => {
-          if (currenPathname.includes(menuItem.pathname.replaceAll('/', '')) && menuItem.textContent !== 'Home') {
-            menuItem.classList.add('is-active')
-            menuItem.setAttribute('aria-current', 'page')
-          } else if (menuItem.textContent === 'Home' && currenPathname === '/') {
-            menuItem.classList.add('is-active')
-            menuItem.setAttribute('aria-current', 'page')
-          }
+      const dropdownMenus = [...document.querySelectorAll('.has-dropdown button')]
+  
+      // functions
+      const setActiveMenuItem = () => {
+        const mobileDesktopMenus = mainNav?.querySelectorAll('nav > ul')
+        const currenPathname = window.location.pathname
+  
+        mobileDesktopMenus.forEach((menu) => {
+          const menuItems = [...menu.querySelectorAll('a:not([rel*="external"])')] as HTMLAnchorElement[]
+  
+          menuItems.forEach((menuItem) => {
+            if (currenPathname.includes(menuItem.pathname.replaceAll('/', '')) && menuItem.textContent !== 'Home') {
+              menuItem.classList.add('is-active')
+              menuItem.setAttribute('aria-current', 'page')
+            } else if (menuItem.textContent === 'Home' && currenPathname === '/') {
+              menuItem.classList.add('is-active')
+              menuItem.setAttribute('aria-current', 'page')
+            }
+          })
         })
-      })
-    }
-
-    const checkMenuSize = () => {
-      const mainNavWidth = mainNav.getBoundingClientRect().width
-      const desktopMenuWidth = document.querySelector('.desktop-menu').getBoundingClientRect().width
-      const logoWidthBuffer = 300
-      const totalMenuWidth = Math.round(desktopMenuWidth) + logoWidthBuffer
-
-      if (totalMenuWidth >= mainNavWidth) {
-        mainNav.classList.remove('is-desktop')
-        mainNav.classList.add('is-mobile')
-      } else if (totalMenuWidth <= mainNavWidth) {
-        mainNav.classList.add('is-desktop')
-        mainNav.classList.remove('is-mobile')
       }
-    }
-
+  
+      const checkMenuSize = () => {
+        const mainNavWidth = mainNav.getBoundingClientRect().width
+        const desktopMenuWidth = document.querySelector('.desktop-menu').getBoundingClientRect().width
+        const logoWidthBuffer = 300
+        const totalMenuWidth = Math.round(desktopMenuWidth) + logoWidthBuffer
+  
+        if (totalMenuWidth >= mainNavWidth) {
+          mainNav.classList.remove('is-desktop')
+          mainNav.classList.add('is-mobile')
+        } else if (totalMenuWidth <= mainNavWidth) {
+          mainNav.classList.add('is-desktop')
+          mainNav.classList.remove('is-mobile')
+        }
+      }
+    
     const isOutOfViewport = (element) => {
       const elementBounds = element.getBoundingClientRect()
       return elementBounds.right > (window.innerWidth || document.documentElement.clientWidth)
@@ -214,6 +216,7 @@ import logo from '../assets/img/logo.svg'
       }
     })
   })
+
 </script>
 
 <style lang="scss" is:global>
@@ -280,23 +283,27 @@ import logo from '../assets/img/logo.svg'
         a,
         button {
           text-decoration: none;
+          padding-inline: .5em;
           font-size: 1.125rem;
           line-height: 1.6875rem;
         }
 
-        a:hover,
-        a:focus,
-        .is-active,
-        .has-dropdown > button:hover,
-        .has-dropdown > button:focus {
-          text-decoration: underline;
-          text-decoration-thickness: 1px;
-          text-decoration-style: wavy;
-          text-underline-offset: 7px;
+        
+        a:focus {
+          outline: 2px solid var(--secondary-600);
+          
+        }
+
+        a:hover {
+          background-color: var(--secondary-600);
+          color: var(--primary-600);
         }
 
         .is-active {
-          font-weight: bold;
+          text-decoration: underline;
+          text-underline-offset: 7px;
+          text-decoration-thickness: 2px;
+          text-decoration-color: var(--secondray-600);
         }
       }
     }
@@ -307,6 +314,7 @@ import logo from '../assets/img/logo.svg'
 
       > ul {
         flex-direction: column;
+        text-align: center;
 
         ul {
           position: relative;

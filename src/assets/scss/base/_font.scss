@@ -70,6 +70,10 @@ body {
     }
   }
 
+  #navbar-name {
+    font-family: var(--font-family-special);
+  }
+
   :where(main) a {
     word-wrap: break-word;
     word-break: break-word;
