@@ -5,12 +5,13 @@ import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 
 import img from '../assets/img/valstrut.jpeg';
+import img2 from '../assets/img/valshoulder.jpg';
 ---
 
 <DefaultLayout title="contact">
     <div class="container flex flex-col gap-8">
         <h1>Contact</h1>
-        <Image src={img} alt="Valerie walking with her clarinet over her shoulder, in front of a garden"/>
+        <Image src={img} alt="Valerie walking with her clarinet over her shoulder, in front of a garden" class="brightness-[85%] contrast-[120%]"/>
         <div class="grid grid-cols-1 gap-16 md:grid-cols-2">
             <div class="flex flex-col gap-8">
                 <div class="flex gap-2">
@@ -23,30 +24,33 @@ import img from '../assets/img/valstrut.jpeg';
                     <li>Arranging</li>
                     <li>Composition</li>
                 </ul>
-
+                
             </div>
             <ContactForm/>
         </div>
-        <div>
-            <h2>Follow Valerie</h2>
-            <ul class="flex gap-4">
-                <li>
-                    <a href="https://www.instagram.com/valerienuzzolo">
-                        <Icon name="ion:logo-instagram" class="text-5xl self-start"/>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.facebook.com/valerie.nuzzolo">
-                        <Icon name="ion:logo-facebook" class="text-5xl self-start"/>
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.youtube.com/@valerienuzzolo8932">
-                        <Icon name="ion:logo-youtube" class="text-5xl self-start"/>
-                    </a>
-                </li>
-
-            </ul>
+        <div class="grid grid-cols-1 gap-16 md:grid-cols-2 items-center">
+            <div>
+                <h2>Follow Valerie</h2>
+                <ul class="flex gap-4">
+                    <li>
+                        <a href="https://www.instagram.com/valerienuzzolo">
+                            <Icon name="ion:logo-instagram" class="text-5xl self-start"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.facebook.com/valerie.nuzzolo">
+                            <Icon name="ion:logo-facebook" class="text-5xl self-start"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/@valerienuzzolo8932">
+                            <Icon name="ion:logo-youtube" class="text-5xl self-start"/>
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <Image src={img2} alt=""/>
         </div>
     </div>
 </DefaultLayout>

@@ -2,14 +2,30 @@
 import DefaultLayout from '../layouts/DefaultLayout.astro'
 import Hero from '../components/Hero.astro'
 import Quote from '../components/Quote.astro'
-
-// import Counter from '../components/Counter.astro'
-// import ContentMedia from '../components/ContentMedia.astro'
+import Image from 'astro/components/Image.astro'
+import img from '../assets/img/valcross.jpeg';
 ---
 
 <DefaultLayout title="Home">
   <Hero />
   <div class="container">
     <Quote quote="Valerie is a force of nature with an unwavering commitment to conveying every note with artistic integrity and fidelity to the score and what the music calls for. One of the best people I have worked with in my career!" name="Emmanuel Berrido" job="composer"/>
+    <div class="grid grid-cols-1 gap-16 md:grid-cols-2 items-center">
+      <Image src={img} alt="" class="max-h-dvh w-auto"/>
+      <div class="flex flex-col gap-8">
+        <div class="flex flex-col gap-4">
+          <h3>Check out Valerie's recent & upcoming performances</h3>
+          <a href="/calendar" type="button" class="button">Calendar</a>
+        </div>
+        <div class="flex flex-col gap-4">
+          <h3>Listen or watch Valerie perform</h3>
+          <a href="/listen" type="button" class="button">Listen</a>
+        </div>
+        <div class="flex flex-col gap-4"> 
+          <h3>Contact Valerie</h3>
+          <a href="/contact" type="button" class="button">Contact</a>
+        </div>
+      </div>
+    </div>
   </div>
 </DefaultLayout>

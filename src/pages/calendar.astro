@@ -1,6 +1,13 @@
 ---
 import DefaultLayout from "../layouts/DefaultLayout.astro";
+import Quote from '../components/Quote.astro'
 import Event from "../components/Event.astro";
+import img1 from '../assets/img/valcrisscross.jpg';
+import img2 from '../assets/img/valsteps.jpg';
+import img3 from '../assets/img/valcute.jpg';
+import img4 from '../assets/img/valsmile.jpg';
+import Image from "astro/components/Image.astro";
+
 ---
 
 <script is:inline src="https://cdn.jsdelivr.net/npm/add-to-calendar-button@2" async defer></script>
@@ -12,6 +19,17 @@ import Event from "../components/Event.astro";
         <div class="flex flex-col gap-8">
           <Event title="ClarinetFest 2024" date="2024-08-02" location="Dublin, Ireland" time="15:00" timeEnd="16:00" place="Ecocem (Tech Room)" program={[{"title": "Stubborn as Hell","composer": "Stacy Garrop"}, {"title": "Tri-Cycle Bicycle","composer": "Emmanuel Berrido (world premiere)" }]} />
           <Event title="Courtyard Gala" date="2024-06-22" location="St. James, New York" time="18:00" timeEnd="19:00" place="The Atelier at Flowerfield" />
+        </div>
+        <Quote quote="Valerie’s musicianship is very diverse. She has such a great sound, a wide repertoire, and is a wonderful person to work with both in an ensemble and chamber setting." name="Michael Giunta" job="percussionist" />
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="flex flex-col gap-4">
+            <Image src={img1} alt="Valerie sitting criss-cross applesauce with her clarinet in the grass with a big smile"/>
+            <Image src={img2} alt="Valerie smiling and sitting on stone steps with her clarinet standing in front of her"/>
+          </div>
+          <div class="flex flex-col gap-4">
+            <Image src={img3} alt="Valerie sitting criss-cross applesauce in the grass, giggling, while holding the bell of her clarinet to her right ear, and the rest of her clarinet upright in the other"/>
+            <Image src={img4} alt="A close-up of Valerie against a large tree, smiling while holding her clarinet"/>
+          </div>
         </div>
     </div>
     
