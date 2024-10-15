@@ -28,8 +28,8 @@
     }
 
     // execution
-    responsiveToggle.addEventListener('click', (_) => {
-      const mobileNavigation = document.querySelector('.mobile-menu')
+    responsiveToggle?.addEventListener('click', () => {
+      const mobileNavigation: any = document.querySelector('.mobile-menu')
 
       mobileNavigation.classList.toggle('show')
       mobileNavigation.classList.contains('show') ? openMenu(responsiveToggle) : closeMenu(responsiveToggle)

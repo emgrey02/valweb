@@ -61,7 +61,8 @@ ol.incremented {
 
   ul {
     li::before {
-      content: '';
+      content: '-';
+      
     }
   }
 }

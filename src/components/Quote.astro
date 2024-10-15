@@ -1,0 +1,35 @@
+---
+import { Icon } from 'astro-icon/components'
+
+ const {quote, name, job} = Astro.props;
+
+---
+
+<div class="flex flex-col gap-8 items-end py-20 my-8 px-8 md:px-10 text-[var(--font-color)] border-2 border-[var(--action-color-state)]">
+    
+    <p class="text-2xl md:text-3xl quote my-20 md:m-20 italic font-normal">
+        {quote}
+    </p>
+    
+    <div class="text-3xl flex gap-2 items-end">
+        <Icon name="ion:chatbubble-outline" class="text-4xl self-start"/> 
+        <div class="flex flex-col items-end font-semibold pt-2">
+            <p class="text-[var(--action-color-state)]">{name},</p>
+            <p class="text-2xl font-normal">{job}</p>
+        </div>
+    </div>
+</div>
+
+<style>
+    .quote {
+        line-height: 1.4;
+    }
+
+    .quote::before {
+        content: open-quote;
+        display: inline-block;
+        font-size: 4em;
+        line-height: 0.001em;
+        color: var(--action-color-state);
+    }
+</style>

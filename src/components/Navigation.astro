@@ -33,13 +33,13 @@ import logo from '../assets/img/logo.svg'
     // variables
     const mainNav = document.querySelector('#main-navigation');
    
-      const mainMenu = mainNav?.querySelector('ul')
+      const mainMenu: any = mainNav?.querySelector('ul')
 
       const dropdownMenus = [...document.querySelectorAll('.has-dropdown button')]
   
       // functions
       const setActiveMenuItem = () => {
-        const mobileDesktopMenus = mainNav?.querySelectorAll('nav > ul')
+        const mobileDesktopMenus: any = mainNav?.querySelectorAll('nav > ul')
         const currenPathname = window.location.pathname
   
         mobileDesktopMenus.forEach((menu) => {
@@ -58,17 +58,17 @@ import logo from '../assets/img/logo.svg'
       }
   
       const checkMenuSize = () => {
-        const mainNavWidth = mainNav.getBoundingClientRect().width
-        const desktopMenuWidth = document.querySelector('.desktop-menu').getBoundingClientRect().width
+        const mainNavWidth: any = mainNav?.getBoundingClientRect().width
+        const desktopMenuWidth: any = document.querySelector('.desktop-menu')?.getBoundingClientRect().width
         const logoWidthBuffer = 300
         const totalMenuWidth = Math.round(desktopMenuWidth) + logoWidthBuffer
   
         if (totalMenuWidth >= mainNavWidth) {
-          mainNav.classList.remove('is-desktop')
-          mainNav.classList.add('is-mobile')
+          mainNav?.classList.remove('is-desktop')
+          mainNav?.classList.add('is-mobile')
         } else if (totalMenuWidth <= mainNavWidth) {
-          mainNav.classList.add('is-desktop')
-          mainNav.classList.remove('is-mobile')
+          mainNav?.classList.add('is-desktop')
+          mainNav?.classList.remove('is-mobile')
         }
       }
     
@@ -142,7 +142,7 @@ import logo from '../assets/img/logo.svg'
         }
 
         if (currentDropdownMenu) {
-          const firstDropdownItem = currentDropdownMenu.nextElementSibling.querySelector('li')
+          const firstDropdownItem = currentDropdownMenu.nextElementSibling?.querySelector('li')
 
           if (key === 'ArrowDown') {
             event.preventDefault()
@@ -156,7 +156,7 @@ import logo from '../assets/img/logo.svg'
         }
 
         if (currentDropdownMenuItem) {
-          const currentDropdownList = currentDropdownMenuItem.parentNode
+          const currentDropdownList: any = currentDropdownMenuItem.parentNode
           const dropdownMenuItems = [...currentDropdownList.querySelectorAll('li')]
           const currentIndex = dropdownMenuItems.findIndex((item) => item === currentDropdownMenuItem)
 
@@ -182,7 +182,7 @@ import logo from '../assets/img/logo.svg'
 
           if (key === 'Escape') {
             const currentDropdownMenu = (currentDropdownList as Element).previousElementSibling
-            targetItem = currentDropdownMenu.parentNode
+            targetItem = currentDropdownMenu?.parentNode
             closeAllDropdownMenus()
           }
 
@@ -286,24 +286,24 @@ import logo from '../assets/img/logo.svg'
           padding-inline: .5em;
           font-size: 1.125rem;
           line-height: 1.6875rem;
+          transition: 150ms ease-in-out background-color, 150ms ease-in-out color;
         }
 
         
         a:focus {
-          outline: 2px solid var(--secondary-600);
+          outline: 2px solid var(--action-color-state);
           
         }
 
         a:hover {
-          background-color: var(--secondary-600);
-          color: var(--primary-600);
+          
         }
 
         .is-active {
           text-decoration: underline;
           text-underline-offset: 7px;
           text-decoration-thickness: 2px;
-          text-decoration-color: var(--secondray-600);
+          text-decoration-color: var(--action-color-state);
         }
       }
     }

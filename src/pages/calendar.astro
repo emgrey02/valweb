@@ -1,24 +1,18 @@
 ---
 import DefaultLayout from "../layouts/DefaultLayout.astro";
+import Event from "../components/Event.astro";
 ---
 
 <script is:inline src="https://cdn.jsdelivr.net/npm/add-to-calendar-button@2" async defer></script>
 
 <DefaultLayout title="calendar">
-    <div class="container">
+    <div class="container flex flex-col gap-8">
         <h1>Calendar</h1>
-        <add-to-calendar-button
-          name="Title"
-          options="'Apple','Google'"
-          location="World Wide Web"
-          startDate="2024-09-19"
-          endDate="2024-09-19"
-          startTime="10:15"
-          endTime="23:30"
-          timeZone="America/Los_Angeles"
-        ></add-to-calendar-button>
-
-
+        <p>Come to one of Valerie's performances!</p>
+        <div class="flex flex-col gap-8">
+          <Event title="ClarinetFest 2024" date="2024-08-02" location="Dublin, Ireland" time="15:00" timeEnd="16:00" place="Ecocem (Tech Room)" program={[{"title": "Stubborn as Hell","composer": "Stacy Garrop"}, {"title": "Tri-Cycle Bicycle","composer": "Emmanuel Berrido (world premiere)" }]} />
+          <Event title="Courtyard Gala" date="2024-06-22" location="St. James, New York" time="18:00" timeEnd="19:00" place="The Atelier at Flowerfield" />
+        </div>
     </div>
     
 </DefaultLayout>

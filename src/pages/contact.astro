@@ -1,9 +1,64 @@
 ---
 import DefaultLayout from "../layouts/DefaultLayout.astro";
+import ContactForm from "../components/ContactForm.astro";
+import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
+
+const { img = '/src/assets/img/valstrut.jpeg' } = Astro.props
 ---
 
 <DefaultLayout title="contact">
-    <div class="container">
+    <div class="container flex flex-col gap-8">
         <h1>Contact</h1>
+        <Image src={img} width="1679" height="1054" alt="Valerie walking with her clarinet over her shoulder, in front of a garden"/>
+        <div class="grid grid-cols-1 gap-16 md:grid-cols-2">
+            <div class="flex flex-col gap-8">
+                <div class="flex gap-2">
+                    <Icon name="ion:happy-outline" class="text-4xl hover:rotate-180 hover:text-[var(--action-color-state)] transition-all" ></Icon>
+                    <h2>Get in touch with Valerie</h2>
+                </div>
+                <ul class="flex flex-col gap-4 list">
+                    <li>Private lessons</li>
+                    <li>Masterclasses</li>
+                    <li>Arranging</li>
+                    <li>Composition</li>
+                </ul>
+
+            </div>
+            <ContactForm/>
+        </div>
+        <div>
+            <h2>Follow Valerie</h2>
+            <ul class="flex gap-4">
+                <li>
+                    <a href="https://www.instagram.com/valerienuzzolo">
+                        <Icon name="ion:logo-instagram" class="text-5xl self-start"/>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com/valerie.nuzzolo">
+                        <Icon name="ion:logo-facebook" class="text-5xl self-start"/>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/@valerienuzzolo8932">
+                        <Icon name="ion:logo-youtube" class="text-5xl self-start"/>
+                    </a>
+                </li>
+
+            </ul>
+        </div>
     </div>
 </DefaultLayout>
+
+<style>
+    ul[class="flex flex-col gap-4 list"] li {
+        font-size: 1.5em;
+        display: flex;
+        gap: .3em;
+    }
+    ul[class="flex flex-col gap-4 list"] li::before {
+        content: '*';
+        font-size: 2em;
+    }
+</style>

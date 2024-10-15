@@ -4,26 +4,25 @@
 
 .button {
   display: inline-block;
+  font-size: larger;
+  font-weight: 600;
   padding: 0.75rem 1rem;
-  font-weight: bold;
-  text-decoration: none;
   text-align: center;
-  color: var(--neutral-900);
-  background-color: var(--primary-100);
-  border: 3px solid var(--primary-100);
-  border-radius: 3px;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  letter-spacing: .05em;
+  background-color: transparent;
+  color: var(--font-color);
+  border: 3px solid var(--action-color-state);
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, font-weight 0.15s ease-in-out;
 
   &:hover,
   &:focus {
-    text-decoration: underline;
-    background-color: var(--primary-200);
-    border-color: var(--primary-200);
+    background-color: var(--action-color-state);
+    color: var(--background);
   }
 
-  &:visited {
-    color: var(--neutral-900);
-  }
+  // &:visited {
+  //   color: var(--neutral-900);
+  // }
 
   &.color-secondary {
     background-color: var(--secondary-100);
@@ -142,5 +141,5 @@
 }
 
 .darkmode .button.type-secondary {
-  color: var(--neutral-100);
+  color: var(--primary-200);
 }

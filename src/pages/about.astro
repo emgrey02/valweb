@@ -1,9 +1,47 @@
 ---
 import DefaultLayout from "../layouts/DefaultLayout.astro";
+
+import { Image } from "astro:assets"
+
+import { Icon } from 'astro-icon/components'
+import Quote from "../components/Quote.astro";
+
+const { img1 = '/src/assets/img/valsit.jpeg', img2 = '/src/assets/img/valflowers.jpeg', img3 = '/src/assets/img/EWP-logo.jpg' } = Astro.props
+
 ---
 
 <DefaultLayout title="about">
-    <div class="container">
+    <div class="container flex flex-col gap-8">
         <h1>About</h1>
+        <div class="grid grid-cols-1 gap-16 md:grid-cols-2">
+            <div class="max-w-[65ch] text-lg flex flex-col justify-center gap-6">
+                <p>
+                    Valerie Nuzzolo is an enthusiastic performer and teacher. She holds a DMA from Michigan State University and a Masters from Ithaca College, both in Clarinet Performance, and a Bachelors in Music Education from Lee University. Primary teachers are Guy Yehuda, Richard Faria, Peter Cain, and Mindy Dragovich.
+                </p>
+    
+            </div>
+            <Image class="shadow-sm place-self-center md:place-self-end" src={img1} alt="valerie smiling with a black dress on, sitting in a chair with her clarinet on a stand in front of her" width="400" height="400"/>
+        </div>
+        <div class="grid grid-cols-1 gap-16 md:grid-cols-2">
+            <Image class="shadow-sm place-self-center md:place-self-start" src={img2} alt="" width="400" height="400"/>
+            <div class="max-w-[65ch] text-lg flex flex-col justify-center gap-6">
+                <p>
+                    In 2020, Valerie performed in Kolkata, India as one of the Spartan Winds as guests of the Pitch Pipe Foundation, alongside its founder Jennifer Heemstra. In addition to performing as a soloist and chamber musician, she has also performed with the Ithaca New Music Collective, Cayuga Chamber Orchestra, and Kingsport Symphony Orchestra.
+                </p>
+                <p>
+                    Currently, she is based on Long Island in New York and the Adjunct Professor of Clarinet at Five Towns College.
+                </p>
+            </div>
+        </div>
+        <div class="text-lg flex flex-col w-full items-center gap-6 pt-4">
+            <h2>The Ember Winds Project</h2>
+            <Image src={img3} alt="" width="400" height="400"/>
+            <div class="flex gap-8">
+                <a href="https://www.instagram.com/emberwindsproject/"><Icon name="ion:logo-instagram" class="text-5xl"/></a>
+                <a href="https://www.emberwinds.org"><Icon name="ion:arrow-up-right-box-outline" class="text-5xl"/></a>
+            </div>
+            <p class="max-w-[65ch]">Valerie is the co-founder of The Ember Winds Project, a duo born in 2023 aiming to spark excitement for new music and innovative performance. Valerie, Heather O-Gara, and all of their clarinets are apart of this project.</p>
+        </div>
+        <Quote quote=`Valerie has a bright and fun personality that translates into her performing! As an audience member, this musical energy draws you into her performance. She is also open to new ideas and flexible, which leads her to be very willing to try new things in collaboration. Valerie is a fantastic person to play chamber music with, sharing her musical individuality but also including other voices. I look forward to the day that we get to play together again!` name="Mia Zamora" job="clarinetist"/>
     </div>
 </DefaultLayout>

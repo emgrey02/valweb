@@ -1,24 +1,19 @@
 ---
 import DefaultLayout from '../layouts/DefaultLayout.astro'
 import Hero from '../components/Hero.astro'
+import Quote from '../components/Quote.astro'
 
-import Counter from '../components/Counter.astro'
-import ContentMedia from '../components/ContentMedia.astro'
+// import Counter from '../components/Counter.astro'
+// import ContentMedia from '../components/ContentMedia.astro'
 ---
 
 <DefaultLayout title="Home">
   <Hero />
-  
-  <ContentMedia imgSrc="/accessible-components.webp">
-    <h2>Accessible Components</h2>
-    <p class="text-2xl">
-      This theme provides plenty of tried and tested Accessible Astro Components. Some are native to this theme and a
-      lot of others are integrated using a <a href="https://github.com/markteekman/accessible-astro-components"
-        >separate package</a
-      >. They'll get you up and running in building an accessible solution for your visitors.
-    </p>
-  </ContentMedia>
-  <ContentMedia imgSrc="/wcag-compliant.webp" reverseImg={true}>
+  <div class="container">
+    <Quote quote="Valerie is a force of nature with an unwavering commitment to conveying every note with artistic integrity and fidelity to the score and what the music calls for. One of the best people I have worked with in my career!" name="Emmanuel Berrido" job="composer"/>
+  </div>
+
+  <!-- <ContentMedia imgSrc="/wcag-compliant.webp" reverseImg={true}>
     <h2>WCAG 2.1 AA Compliant</h2>
     <p class="text-2xl">
       Using semantic HTML, landmarks, skip links, screen reader friendly content, aria-labels, keyboard accessible
@@ -36,5 +31,5 @@ import ContentMedia from '../components/ContentMedia.astro'
         <Counter count="18+" title="Months" sub="Since launch" />
       </div>
     </div>
-  </section>
+  </section> -->
 </DefaultLayout>
