@@ -1,9 +1,6 @@
 ---
 import { Image } from "astro:assets"
-
-// import { Icon } from 'astro-icon/components'
-
-const { src = '/src/assets/img/val.jpeg' } = Astro.props
+import src from '../assets/img/val.jpeg';
 ---
 
 <section class="hero">
@@ -16,7 +13,7 @@ const { src = '/src/assets/img/val.jpeg' } = Astro.props
         <p class="text-3xl font-normal dark:font-extralight">Clarinetist. Educator.</p>
         <a href='/about' type="button" class="button size-huge">Meet Valerie</a>
       </div>
-      <Image class="w-fit max-h-dvh" src={src} width={984}  height={1871} alt="valerie in a black dress holding her clarinet and smiling" decoding="async" />
+      <Image class="w-fit max-h-dvh" src={src} alt="valerie in a black dress holding her clarinet and smiling" decoding="async" />
     </div>
   </div>
 </section>

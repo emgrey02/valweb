@@ -6,7 +6,9 @@ import { Image } from "astro:assets"
 import { Icon } from 'astro-icon/components'
 import Quote from "../components/Quote.astro";
 
-const { img1 = '/src/assets/img/valsit.jpeg', img2 = '/src/assets/img/valflowers.jpeg', img3 = '/src/assets/img/EWP-logo.jpg' } = Astro.props
+import img1 from '../assets/img/valsit.jpeg';
+import img2 from '../assets/img/valflowers.jpeg';
+import img3 from '../assets/img/EWP-logo.jpg';
 
 ---
 
@@ -20,10 +22,10 @@ const { img1 = '/src/assets/img/valsit.jpeg', img2 = '/src/assets/img/valflowers
                 </p>
     
             </div>
-            <Image class="shadow-sm place-self-center md:place-self-end" src={img1} alt="valerie smiling with a black dress on, sitting in a chair with her clarinet on a stand in front of her" width="400" height="400"/>
+            <Image class="shadow-sm place-self-center md:place-self-end" src={img1} alt="valerie smiling with a black dress on, sitting in a chair with her clarinet on a stand in front of her"/>
         </div>
         <div class="grid grid-cols-1 gap-16 md:grid-cols-2">
-            <Image class="shadow-sm place-self-center md:place-self-start" src={img2} alt="" width="400" height="400"/>
+            <Image class="shadow-sm place-self-center md:place-self-start" src={img2} alt="" />
             <div class="max-w-[65ch] text-lg flex flex-col justify-center gap-6">
                 <p>
                     In 2020, Valerie performed in Kolkata, India as one of the Spartan Winds as guests of the Pitch Pipe Foundation, alongside its founder Jennifer Heemstra. In addition to performing as a soloist and chamber musician, she has also performed with the Ithaca New Music Collective, Cayuga Chamber Orchestra, and Kingsport Symphony Orchestra.
@@ -33,9 +35,9 @@ const { img1 = '/src/assets/img/valsit.jpeg', img2 = '/src/assets/img/valflowers
                 </p>
             </div>
         </div>
-        <div class="text-lg flex flex-col w-full items-center gap-6 pt-4">
+        <div class="text-lg flex flex-col w-full items-center gap-6 pt-4 my-20">
             <h2>The Ember Winds Project</h2>
-            <Image src={img3} alt="" width="400" height="400"/>
+            <Image src={img3} alt="" height="300"/>
             <div class="flex gap-8">
                 <a href="https://www.instagram.com/emberwindsproject/"><Icon name="ion:logo-instagram" class="text-5xl"/></a>
                 <a href="https://www.emberwinds.org"><Icon name="ion:arrow-up-right-box-outline" class="text-5xl"/></a>

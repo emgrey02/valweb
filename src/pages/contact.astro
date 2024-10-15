@@ -4,13 +4,13 @@ import ContactForm from "../components/ContactForm.astro";
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 
-const { img = '/src/assets/img/valstrut.jpeg' } = Astro.props
+import img from '../assets/img/valstrut.jpeg';
 ---
 
 <DefaultLayout title="contact">
     <div class="container flex flex-col gap-8">
         <h1>Contact</h1>
-        <Image src={img} width="1679" height="1054" alt="Valerie walking with her clarinet over her shoulder, in front of a garden"/>
+        <Image src={img} alt="Valerie walking with her clarinet over her shoulder, in front of a garden"/>
         <div class="grid grid-cols-1 gap-16 md:grid-cols-2">
             <div class="flex flex-col gap-8">
                 <div class="flex gap-2">
