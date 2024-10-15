@@ -5,47 +5,40 @@
 @use 'breakpoint' as *;
 
 @font-face {
-  font-family: 'Mukta';
-  src: local('Mukta ExtraBold'), local('Mukta-ExtraBold'), url('/fonts/Mukta-ExtraBold.ttf') format('truetype');
-  font-weight: bolder;
+  font-family: 'Libre Bodoni';
+  src: local('Libre Bodoni'), url('/fonts/LibreBodoni-VariableFont_wght.ttf') format('truetype-variations');
+  font-weight: 400 700;
+  font-style: normal italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Libre Bodoni';
+  src: local('Libre Bodoni Italic'), url('/fonts/LibreBodoni-Italic-VariableFont_wght.ttf') format('truetype-variations');
+  font-weight: 400 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: local('Raleway'), url('/fonts/Raleway-VariableFont_wght.ttf') format('truetype-variations');
+  font-weight: 100 900;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Mukta';
-  src: local('Mukta Bold'), local('Mukta-Bold'), url('/fonts/Mukta-Bold.ttf') format('truetype');
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Mukta';
-  src: local('Mukta Light'), local('Mukta-Light'), url('/fonts/Mukta-Light.ttf') format('truetype');
-  font-weight: lighter;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Mukta';
-  src: local('Mukta Regular'), local('Mukta-Regular'), url('/fonts/Mukta-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Jacques Francois';
-  src: local('Jacques Francois Regular'), local('JacquesFrancois-Regular'), url('/fonts/JacquesFrancois-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+  font-family: 'Raleway';
+  src: local('Raleway Italic'), url('/fonts/Raleway-Italic-VariableFont_wght.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-style: italic;
   font-display: swap;
 }
 
 body {
   font-family: var(--font-family-default);
+  font-weight: 500;
   text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px;
   text-rendering: optimizeLegibility;
   font-synthesis: none;
@@ -83,16 +76,23 @@ body {
     font-family: var(--font-family-special);
   }
 
-  h1,
-  h2 {
-    font-weight: 800;
+  
+  h1, h2 {
+    font-weight: 400;
+    font-style: italic;
+    color: var(--big-font-color);
+  }
+
+  h1 {
+    font-style: normal;
+    font-weight: 700;
   }
 
   h3,
   h4,
   h5,
   h6 {
-    font-weight: 600;
+    font-weight: 400;
   }
 
   h1 {
