@@ -1,36 +1,88 @@
 ---
-import DefaultLayout from "../layouts/DefaultLayout.astro";
+import DefaultLayout from '../layouts/DefaultLayout.astro'
 import Quote from '../components/Quote.astro'
-import Event from "../components/Event.astro";
-import img1 from '../assets/img/valcrisscross.jpg';
-import img2 from '../assets/img/valsteps.jpg';
-import img3 from '../assets/img/valcute.jpg';
-import img4 from '../assets/img/valsmile.jpg';
-import Image from "astro/components/Image.astro";
+import Event from '../components/Event.astro'
 
+import { Image } from 'astro:assets'
+
+import img1 from '../assets/img/valcrisscross.jpg'
+import img3 from '../assets/img/valcute.jpg'
 ---
 
 <script is:inline src="https://cdn.jsdelivr.net/npm/add-to-calendar-button@2" async defer></script>
 
-<DefaultLayout title="calendar">
-    <div class="container flex flex-col gap-8">
-        <h1>Calendar</h1>
-        <p>Come to one of Valerie's performances!</p>
-        <div class="flex flex-col gap-8">
-          <Event title="ClarinetFest 2024" date="2024-08-02" location="Dublin, Ireland" time="15:00" timeEnd="16:00" place="Ecocem (Tech Room)" program={[{"title": "Stubborn as Hell","composer": "Stacy Garrop"}, {"title": "Tri-Cycle Bicycle","composer": "Emmanuel Berrido (world premiere)" }]} />
-          <Event title="Courtyard Gala" date="2024-06-22" location="St. James, New York" time="18:00" timeEnd="19:00" place="The Atelier at Flowerfield" />
-        </div>
-        <Quote quote="Valerie’s musicianship is very diverse. She has such a great sound, a wide repertoire, and is a wonderful person to work with both in an ensemble and chamber setting." name="Michael Giunta" job="percussionist" />
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div class="flex flex-col gap-4">
-            <Image src={img1} alt="Valerie sitting criss-cross applesauce with her clarinet in the grass with a big smile"/>
-            <Image src={img2} alt="Valerie smiling and sitting on stone steps with her clarinet standing in front of her"/>
-          </div>
-          <div class="flex flex-col gap-4">
-            <Image src={img3} alt="Valerie sitting criss-cross applesauce in the grass, giggling, while holding the bell of her clarinet to her right ear, and the rest of her clarinet upright in the other"/>
-            <Image src={img4} alt="A close-up of Valerie against a large tree, smiling while holding her clarinet"/>
-          </div>
-        </div>
+<DefaultLayout
+  title="Calendar"
+  description="View Valerie Nuzzolo’s calendar for upcoming clarinet performances, masterclasses, and events across the country. Stay tuned for updates!"
+>
+  <div class="container flex flex-col gap-4">
+    <h1>Calendar</h1>
+    <Quote
+      quote="Valerie’s musicianship is very diverse. She has such a great sound, a wide repertoire, and is a wonderful person to work with both in an ensemble and chamber setting."
+      name="Michael Giunta"
+      job="percussionist"
+    />
+    <p>Come to one of Valerie's performances!</p>
+    <div class="flex flex-col gap-8">
+      <Event
+        title="ICA ClarinetFest 2025"
+        date="2025-07-09"
+        location="Fort Worth, Texas"
+        time="17:00"
+        timeEnd="18:00"
+        place="BACCA Arts Center, 149 N Wellwood Ave"
+        program={[{ title: 'Premiering a new work', composer: 'Eric R. Stewart, composer/guitarist' }]}
+        info="The Ember Winds Project (Valerie Nuzzolo and Heather O'Gara) with Eric R. Stewart, composer/guitarist"
+        url="https://www.instagram.com/p/DGuDFWrAuWX/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+        key="1"
+      />
+      <Event
+        title="Conversations - Music for Clarinets +"
+        date="2025-05-30"
+        location="Lindenhurst, NY"
+        time="19:00"
+        timeEnd="21:00"
+        place="BACCA Arts Center, 149 N Wellwood Ave"
+        program={[
+          { title: 'Includes Beethoven, Gershwin, Gipps, Tozzola, Hailstork, and more.' },
+          { title: 'A special reprise of Tri-Cycle Bicycle', composer: 'Emmanual Berrido' },
+        ]}
+        info="Join us for a unique evening of chamber music presented by The Ember Winds Project! $20 suggested donation."
+        url="https://www.instagram.com/p/DJo74DCgHAA/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+        key="2"
+      />
+      <Event
+        title="ICA ClarinetFest 2024"
+        date="2024-08-02"
+        location="Dublin, Ireland"
+        time="15:00"
+        timeEnd="16:00"
+        place="Ecocem (Tech Room)"
+        program={[
+          { title: 'Stubborn as Hell', composer: 'Stacy Garrop' },
+          { title: 'Tri-Cycle Bicycle', composer: 'Emmanuel Berrido (world premiere)' },
+        ]}
+        info=""
+        url="https://www.instagram.com/p/C9cpWQFN-ZH/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+        key="3"
+      />
+      <Event
+        title="Courtyard Gala"
+        date="2024-06-22"
+        location="St. James, New York"
+        time="18:00"
+        timeEnd="19:00"
+        place="The Atelier at Flowerfield"
+        key="4"
+      />
     </div>
-    
+
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+      <Image src={img1} alt="Valerie sitting criss-cross applesauce with her clarinet in the grass with a big smile" />
+      <Image
+        src={img3}
+        alt="Valerie sitting criss-cross applesauce in the grass, giggling, while holding the detached bell of her clarinet to her right ear, and the rest of her clarinet upright in the other"
+      />
+    </div>
+  </div>
 </DefaultLayout>

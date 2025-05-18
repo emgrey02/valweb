@@ -1,9 +1,14 @@
 ---
-import DefaultLayout from "../layouts/DefaultLayout.astro";
+import DefaultLayout from '../layouts/DefaultLayout.astro'
+import img2 from '../assets/img/valsteps.jpg'
+import Image from 'astro/components/Image.astro'
 ---
 
-<DefaultLayout title="teaching philosophy">
-    <div class="container">
-        <h1>Teaching Philosophy</h1>
+<DefaultLayout title="Teaching Philosophy">
+  <div class="container flex flex-col gap-8">
+    <h1>Teaching Philosophy</h1>
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
+      <Image src={img2} alt="Valerie smiling and sitting on stone steps with her clarinet standing in front of her" />
     </div>
+  </div>
 </DefaultLayout>

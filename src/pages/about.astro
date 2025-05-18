@@ -1,49 +1,97 @@
 ---
-import DefaultLayout from "../layouts/DefaultLayout.astro";
+import DefaultLayout from '../layouts/DefaultLayout.astro'
+import Quote from '../components/Quote.astro'
 
-import { Image } from "astro:assets"
-
+import { Image } from 'astro:assets'
 import { Icon } from 'astro-icon/components'
-import Quote from "../components/Quote.astro";
 
-import img1 from '../assets/img/valsit.jpeg';
-import img2 from '../assets/img/valflowers.jpeg';
-import img3 from '../assets/img/EWP-logo.jpg';
-
+import img1 from '../assets/img/valsit.jpeg'
+import img2 from '../assets/img/valflowers.jpeg'
+import img3 from '../assets/img/EWP-logo.jpg'
+const { img4 = '/daddario-ww.webp', img5 = '/daddario.webp' } = Astro.props
+import img6 from '../assets/img/valsmile.jpg'
 ---
 
-<DefaultLayout title="about">
-    <div class="container flex flex-col gap-8">
-        <h1>About</h1>
-        <div class="grid grid-cols-1 gap-16 md:grid-cols-2">
-            <div class="max-w-[65ch] text-lg flex flex-col justify-center gap-6">
-                <p>
-                    Valerie Nuzzolo is an enthusiastic performer and teacher. She holds a DMA from Michigan State University and a Masters from Ithaca College, both in Clarinet Performance, and a Bachelors in Music Education from Lee University. Primary teachers are Guy Yehuda, Richard Faria, Peter Cain, and Mindy Dragovich.
-                </p>
-    
-            </div>
-            <Image class="shadow-sm place-self-center md:place-self-end" src={img1} alt="valerie smiling with a black dress on, sitting in a chair with her clarinet on a stand in front of her"/>
-        </div>
-        <div class="grid grid-cols-1 gap-16 md:grid-cols-2">
-            <Image class="shadow-sm place-self-center md:place-self-start" src={img2} alt="" />
-            <div class="max-w-[65ch] text-lg flex flex-col justify-center gap-6">
-                <p>
-                    In 2020, Valerie performed in Kolkata, India as one of the Spartan Winds as guests of the Pitch Pipe Foundation, alongside its founder Jennifer Heemstra. In addition to performing as a soloist and chamber musician, she has also performed with the Ithaca New Music Collective, Cayuga Chamber Orchestra, and Kingsport Symphony Orchestra.
-                </p>
-                <p>
-                    Currently, she is based on Long Island in New York and the Adjunct Professor of Clarinet at Five Towns College.
-                </p>
-            </div>
-        </div>
-        <div class="text-lg flex flex-col w-full items-center gap-6 pt-4 my-20">
-            <h2>The Ember Winds Project</h2>
-            <Image src={img3} alt="" height="300"/>
-            <div class="flex gap-8">
-                <a href="https://www.instagram.com/emberwindsproject/"><Icon name="ion:logo-instagram" class="text-5xl"/></a>
-                <a href="https://www.emberwinds.org"><Icon name="ion:arrow-up-right-box-outline" class="text-5xl"/></a>
-            </div>
-            <p class="max-w-[65ch]">Valerie is the co-founder of The Ember Winds Project, a duo born in 2023 aiming to spark excitement for new music and innovative performance. Valerie, Heather O-Gara, and all of their clarinets are apart of this project.</p>
-        </div>
-        <Quote quote=`Valerie has a bright and fun personality that translates into her performing! As an audience member, this musical energy draws you into her performance. She is also open to new ideas and flexible, which leads her to be very willing to try new things in collaboration. Valerie is a fantastic person to play chamber music with, sharing her musical individuality but also including other voices. I look forward to the day that we get to play together again!` name="Mia Zamora" job="clarinetist"/>
+<DefaultLayout
+  title="About"
+  description="Learn about clarinetist Valerie Nuzzolo’s background, education, performance career, and passion for music."
+>
+  <div class="container flex flex-col gap-8">
+    <h1>About</h1>
+    <div class="grid grid-cols-1 gap-16 md:grid-cols-2">
+      <div class="flex max-w-[65ch] flex-col justify-center gap-6 text-lg">
+        <p>
+          Valerie Nuzzolo is an enthusiastic performer and teacher. She holds a DMA from Michigan State University and a
+          Masters from Ithaca College, both in Clarinet Performance, and a Bachelors in Music Education from Lee
+          University. Primary teachers are Guy Yehuda, Richard Faria, Peter Cain, and Mindy Dragovich.
+        </p>
+      </div>
+      <Image
+        class="place-self-center shadow-sm md:place-self-end"
+        src={img1}
+        alt="valerie smiling with a black dress on, sitting in a chair with her clarinet on a stand in front of her"
+      />
     </div>
+    <div class="grid grid-cols-1 gap-16 md:grid-cols-2">
+      <Image class="place-self-center shadow-sm md:place-self-start" src={img2} alt="" />
+      <div class="flex max-w-[65ch] flex-col justify-center gap-6 text-lg">
+        <p>
+          In 2020, Valerie performed in Kolkata, India as one of the Spartan Winds as guests of the Pitch Pipe
+          Foundation, alongside its founder Jennifer Heemstra. In addition to performing as a soloist and chamber
+          musician, she has also performed with the Ithaca New Music Collective, Cayuga Chamber Orchestra, and Kingsport
+          Symphony Orchestra.
+        </p>
+        <p>
+          Currently, she is based on Long Island in New York and the Adjunct Professor of Clarinet at Five Towns
+          College.
+        </p>
+      </div>
+    </div>
+    <div class="my-20 flex w-full flex-col items-center gap-6 pt-4 text-lg">
+      <h2>The Ember Winds Project</h2>
+      <Image src={img3} alt="" height="300" />
+      <div class="flex gap-8">
+        <a href="https://www.instagram.com/emberwindsproject/"><Icon name="ion:logo-instagram" class="text-5xl" /></a>
+        <a href="https://www.emberwinds.org"><Icon name="ion:arrow-up-right-box-outline" class="text-5xl" /></a>
+      </div>
+      <p class="max-w-[65ch]">
+        Valerie is the co-founder of The Ember Winds Project, a duo born in 2023 aiming to spark excitement for new
+        music and innovative performance. Valerie, Heather O-Gara, and all of their clarinets are apart of this project.
+      </p>
+    </div>
+    <Quote
+      quote=`Valerie has a bright and fun personality that translates into her performing! As an audience member, this musical energy draws you into her performance. She is also open to new ideas and flexible, which leads her to be very willing to try new things in collaboration. Valerie is a fantastic person to play chamber music with, sharing her musical individuality but also including other voices. I look forward to the day that we get to play together again!`
+      name="Mia Zamora"
+      job="clarinetist"
+    />
+    <div class="grid grid-cols-1 place-items-center gap-16 bg-[var(--action-color-state)] px-4 py-8 md:grid-cols-2">
+      <Image src={img4} width="400" height="500" alt="" />
+      <Image src={img5} width="400" height="500" alt="" />
+    </div>
+    <div class="flex flex-col items-center gap-16 md:flex-row md:items-start">
+      <Image
+        src={img6}
+        class="max-w-[300px]"
+        alt="A close-up of Valerie against a large tree, smiling while holding her clarinet"
+      />
+      <div class="flex flex-col gap-2">
+        <p class="text-2xl italic">Valerie Nuzzolo</p>
+        <h2>D'Addario Woodwind Clinician</h2>
+        <div>
+          <ul>
+            <li>
+              Provides <span class="font-bold uppercase text-[var(--action-color-state)]">free</span> clinics and masterclasses
+              sponsored by D'Addario
+            </li>
+            <li>Designed to fit the performance needs of single reed teachers and students</li>
+            <li>Offers Student, Teacher, and Solutions-Based Clinics</li>
+            <li>Product trials for you and your students</li>
+            <li>Woodwind fundamentals</li>
+            <li>Professional Development</li>
+          </ul>
+        </div>
+        <a type="button" class="button size-large self-start" href="/contact">Contact Valerie</a>
+      </div>
+    </div>
+  </div>
 </DefaultLayout>
