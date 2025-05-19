@@ -8,7 +8,7 @@ import Footer from '../components/Footer.astro'
 const {
   title = 'Valerie Nuzzolo',
   description = 'A space to get to know Valerie Nuzzolo, clarinetist and educator. Learn who she is and why she pursues music, listen or watch her perform, see and save upcoming performances to your calendar, or get in touch with her.',
-  image = '/valstrut.jpg',
+  image = '/opengraph.jpg',
   author = 'Emma Grey',
 } = Astro.props
 ---
@@ -19,25 +19,21 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-
     <!-- favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <SiteMeta
       title={title}
-      description={description.substring(0, 100)}
+      description={description.substring(0, 150)}
       url={Astro.site
         ? `${Astro.site}/${title.toLowerCase().replaceAll(' ', '-')}`
         : `https://accessible-astro.dev/${title.toLowerCase().replaceAll(' ', '-')}`}
       image={image}
       author={author}
     />
-
-    
   </head>
-  
-  <body>
 
+  <body>
     <Header />
     <main id="main-content" transition:animate="fade">
       <slot />
