@@ -8,7 +8,8 @@ import Footer from '../components/Footer.astro'
 const {
   title = 'Valerie Nuzzolo',
   description = 'Get to know clarinetist Valerie Nuzzolo—watch performances, view upcoming events, learn her story, and contact her for lessons or collaborations.',
-  image = '/opengraph.jpg',
+  ogImage = '/opengraph.jpg',
+  twImage = '/twitter-card.jpg',
   author = 'Emma Grey',
 } = Astro.props
 ---
@@ -28,7 +29,8 @@ const {
       url={Astro.site
         ? `${Astro.site}/${title.toLowerCase().replaceAll(' ', '-')}`
         : `https://accessible-astro.dev/${title.toLowerCase().replaceAll(' ', '-')}`}
-      image={image}
+      ogImage={ogImage}
+      twImage={twImage}
       author={author}
     />
   </head>
