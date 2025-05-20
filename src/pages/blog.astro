@@ -1,0 +1,19 @@
+---
+import DefaultLayout from '../layouts/DefaultLayout.astro'
+import { Breadcrumbs, BreadcrumbsItem } from 'accessible-astro-components'
+---
+
+<DefaultLayout
+  title="Blog"
+  description="Accessible Astro Blog"
+  url={Astro.site ? `${Astro.site}/blog` : 'https://accessible-astro.dev/blog'}
+>
+  <div class="container">
+    <h1>Blog</h1>
+    <p>Welcome to the blog!</p>
+    <p>Stay tuned for updates!</p>
+    <ul>
+      <li><a href="/posts/post-1/">Post 1</a></li>
+    </ul>
+  </div>
+</DefaultLayout>

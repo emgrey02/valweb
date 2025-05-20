@@ -130,8 +130,6 @@ import { DarkMode } from 'accessible-astro-components'
 
     const mainMenu: any = mainNav?.querySelector('ul')
 
-    const dropdownMenus = [...document.querySelectorAll('.has-dropdown button')]
-
     // functions
     const setActiveMenuItem = () => {
       const mobileDesktopMenus: any = mainNav?.querySelectorAll('nav > ul')
@@ -167,50 +165,12 @@ import { DarkMode } from 'accessible-astro-components'
       }
     }
 
-    const isOutOfViewport = (element) => {
-      const elementBounds = element.getBoundingClientRect()
-      return elementBounds.right > (window.innerWidth || document.documentElement.clientWidth)
-    }
-
-    const openDropdownMenu = (dropdownMenu) => {
-      const dropdownList = dropdownMenu.parentNode.querySelector('ul')
-
-      dropdownMenu.classList.add('show')
-      dropdownMenu.setAttribute('aria-expanded', 'true')
-
-      if (isOutOfViewport(dropdownList)) {
-        dropdownList.style.left = 'auto'
-      }
-    }
-
-    const closeDropdownMenu = (dropdownMenu) => {
-      dropdownMenu.classList.remove('show')
-      dropdownMenu.setAttribute('aria-expanded', 'false')
-    }
-
-    const closeAllDropdownMenus = () => {
-      for (let i = 0; i < dropdownMenus.length; i++) {
-        closeDropdownMenu(dropdownMenus[i])
-      }
-    }
-
-    const toggleDropdownMenu = (event) => {
-      if (event.target.getAttribute('aria-expanded') === 'false') {
-        closeAllDropdownMenus()
-        openDropdownMenu(event.target)
-      } else {
-        closeDropdownMenu(event.target)
-      }
-    }
-
     // execution
     mainMenu &&
       mainMenu.addEventListener('keydown', (event) => {
         const element = event.target as Element
         const currentMenuItem = element.closest('li')
         const menuItems = [...mainMenu.querySelectorAll('.menu-item')]
-        const currentDropdownMenu = element.closest('.has-dropdown button')
-        const currentDropdownMenuItem = element.closest('.has-dropdown li')
         const currentIndex = menuItems.findIndex((item) => item === currentMenuItem)
 
         const key = event.key
@@ -236,80 +196,13 @@ import { DarkMode } from 'accessible-astro-components'
           targetItem = menuItems[0]
         }
 
-        if (currentDropdownMenu) {
-          const firstDropdownItem = currentDropdownMenu.nextElementSibling?.querySelector('li')
-
-          if (key === 'ArrowDown') {
-            event.preventDefault()
-            openDropdownMenu(currentDropdownMenu)
-            targetItem = firstDropdownItem
-          }
-
-          if (key === 'Escape') {
-            closeDropdownMenu(currentDropdownMenu)
-          }
-        }
-
-        if (currentDropdownMenuItem) {
-          const currentDropdownList: any = currentDropdownMenuItem.parentNode
-          const dropdownMenuItems = [...currentDropdownList.querySelectorAll('li')]
-          const currentIndex = dropdownMenuItems.findIndex((item) => item === currentDropdownMenuItem)
-
-          if (key === 'ArrowDown') {
-            event.preventDefault()
-
-            if (dropdownMenuItems.indexOf(currentDropdownMenuItem as HTMLLIElement) === dropdownMenuItems.length - 1) {
-              targetItem = dropdownMenuItems[0]
-            } else {
-              targetItem = dropdownMenuItems[currentIndex + 1]
-            }
-          }
-
-          if (key === 'ArrowUp') {
-            event.preventDefault()
-
-            if (dropdownMenuItems.indexOf(currentDropdownMenuItem as HTMLLIElement) === 0) {
-              targetItem = dropdownMenuItems[dropdownMenuItems.length - 1]
-            } else {
-              targetItem = dropdownMenuItems[currentIndex - 1]
-            }
-          }
-
-          if (key === 'Escape') {
-            const currentDropdownMenu = (currentDropdownList as Element).previousElementSibling
-            targetItem = currentDropdownMenu?.parentNode
-            closeAllDropdownMenus()
-          }
-
-          if (key === 'Tab') {
-            const currentDropdownMenu = (currentDropdownList as Element).previousElementSibling
-
-            if (dropdownMenuItems.indexOf(currentDropdownMenuItem as HTMLLIElement) === dropdownMenuItems.length - 1) {
-              closeDropdownMenu(currentDropdownMenu)
-            }
-          }
-        }
-
         if (targetItem) {
           targetItem.querySelector('a, button, input').focus()
         }
       })
 
-    dropdownMenus &&
-      dropdownMenus.forEach((dropdownMenu) => {
-        dropdownMenu.addEventListener('click', toggleDropdownMenu)
-      })
-
     setActiveMenuItem()
     checkMenuSize()
-
-    window.addEventListener('resize', checkMenuSize)
-    window.addEventListener('click', (event) => {
-      const element = event.target as Element
-      if (!element.hasAttribute('aria-haspopup') && !element.classList.contains('submenu-item')) {
-        closeAllDropdownMenus()
-      }
-    })
   })
 </script>
 
@@ -317,7 +210,7 @@ import { DarkMode } from 'accessible-astro-components'
   @use '../assets/scss/base/breakpoint' as *;
   @use '../assets/scss/base/outline' as *;
 
-  body.darkmode {
+  html.darkmode {
     .letter {
       fill: #d9d9d9;
     }
@@ -336,14 +229,14 @@ import { DarkMode } from 'accessible-astro-components'
   #main-navigation {
     > .container {
       display: flex;
-      justify-content: space-between;
       flex-wrap: wrap;
+      justify-content: space-between;
     }
 
     &.is-desktop {
       .desktop-menu {
-        visibility: visible;
         position: static;
+        visibility: visible;
       }
 
       .mobile-menu {
@@ -367,10 +260,10 @@ import { DarkMode } from 'accessible-astro-components'
       }
 
       .desktop-menu {
-        visibility: hidden;
-        z-index: -99;
         position: absolute;
         left: 0;
+        visibility: hidden;
+        z-index: -99;
       }
 
       .responsive-toggle {
@@ -392,11 +285,13 @@ import { DarkMode } from 'accessible-astro-components'
 
         a,
         button {
-          text-decoration: none;
+          transition:
+            150ms ease-in-out background-color,
+            150ms ease-in-out color;
           padding-inline: 0.5em;
           font-size: 1.125rem;
           line-height: 1.6875rem;
-          transition: 150ms ease-in-out background-color, 150ms ease-in-out color;
+          text-decoration: none;
         }
 
         a:focus {
@@ -408,9 +303,9 @@ import { DarkMode } from 'accessible-astro-components'
 
         .is-active {
           text-decoration: underline;
-          text-underline-offset: 7px;
-          text-decoration-thickness: 2px;
           text-decoration-color: var(--action-color-state);
+          text-decoration-thickness: 2px;
+          text-underline-offset: 7px;
         }
       }
     }
@@ -432,8 +327,8 @@ import { DarkMode } from 'accessible-astro-components'
       a,
       button {
         display: block;
-        width: 100%;
         padding: 0.5rem 0;
+        width: 100%;
       }
     }
 
@@ -444,9 +339,9 @@ import { DarkMode } from 'accessible-astro-components'
         display: flex;
         align-items: center;
         gap: 0.5rem;
-        padding: 0;
         margin-top: -1px;
         border: none;
+        padding: 0;
         color: var(--action-color);
 
         &:hover {
@@ -458,20 +353,20 @@ import { DarkMode } from 'accessible-astro-components'
         }
 
         &::after {
-          content: '';
+          transform: rotate(135deg);
+          margin-top: -0.25rem;
+          border-width: 0.2em 0.2em 0 0;
+          border-style: solid;
+          border-color: var(--action-color);
           width: 0.85rem;
           height: 0.75em;
-          margin-top: -0.25rem;
-          border-style: solid;
-          border-width: 0.2em 0.2em 0 0;
-          border-color: var(--action-color);
-          transform: rotate(135deg);
+          content: '';
         }
 
         &.show {
           &::after {
-            margin-top: 0.25rem;
             transform: rotate(-45deg);
+            margin-top: 0.25rem;
           }
 
           ~ ul {
@@ -485,27 +380,27 @@ import { DarkMode } from 'accessible-astro-components'
       ul {
         display: none;
         position: absolute;
-        z-index: 100;
-        min-width: 260px;
         top: 125%;
         right: 0;
         bottom: auto;
         left: 0;
-        padding: 1rem;
-        background-color: var(--neutral-background);
-        border: 2px solid black;
+        z-index: 100;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        border: 2px solid black;
+        background-color: var(--neutral-background);
+        padding: 1rem;
+        min-width: 260px;
       }
     }
   }
 
   .darkmode-toggle {
-    padding: 0;
     border: none;
+    padding: 0;
 
     svg {
-      width: 30px;
       margin-top: 4px;
+      width: 30px;
     }
 
     svg path {

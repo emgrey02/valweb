@@ -5,155 +5,165 @@
 @use 'breakpoint' as *;
 
 @font-face {
-  font-family: 'Libre Bodoni';
-  src: local('Libre Bodoni'), url('/fonts/LibreBodoni-VariableFont_wght.ttf') format('truetype-variations');
-  font-weight: 400 700;
   font-style: normal italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Libre Bodoni';
-  src: local('Libre Bodoni Italic'), url('/fonts/LibreBodoni-Italic-VariableFont_wght.ttf') format('truetype-variations');
   font-weight: 400 700;
-  font-style: italic;
+  src:
+    local('Libre Bodoni'),
+    url('/fonts/LibreBodoni-VariableFont_wght.ttf') format('truetype-variations');
+  font-family: 'Libre Bodoni';
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Raleway';
-  src: local('Raleway'), url('/fonts/Raleway-VariableFont_wght.ttf') format('truetype-variations');
-  font-weight: 100 900;
+  font-style: italic;
+  font-weight: 400 700;
+  src:
+    local('Libre Bodoni Italic'),
+    url('/fonts/LibreBodoni-Italic-VariableFont_wght.ttf') format('truetype-variations');
+  font-family: 'Libre Bodoni';
+  font-display: swap;
+}
+
+@font-face {
   font-style: normal;
+  font-weight: 100 900;
+  src:
+    local('Raleway'),
+    url('/fonts/Raleway-VariableFont_wght.ttf') format('truetype-variations');
+  font-family: 'Raleway';
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Raleway';
-  src: local('Raleway Italic'), url('/fonts/Raleway-Italic-VariableFont_wght.ttf') format('truetype-variations');
-  font-weight: 100 900;
   font-style: italic;
+  font-weight: 100 900;
+  src:
+    local('Raleway Italic'),
+    url('/fonts/Raleway-Italic-VariableFont_wght.ttf') format('truetype-variations');
+  font-family: 'Raleway';
   font-display: swap;
 }
 
-body {
-  font-family: var(--font-family-default);
-  font-weight: 500;
-  text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px;
-  text-rendering: optimizeLegibility;
-  font-synthesis: none;
-  font-size: 1rem;
-  line-height: 1.5rem;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
+@layer base {
+  body {
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-family: var(--font-family-default);
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px;
+    -webkit-text-size-adjust: 100%;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
 
-  a:not(.button) {
-    color: var(--action-color);
-    text-decoration: underline;
-
-    &:visited {
+    a:not(.button) {
       color: var(--action-color);
-    }
+      text-decoration: underline;
 
-    &:hover,
-    &:focus {
-      color: var(--action-color-state);
-      text-decoration: none;
-    }
-  }
+      &:visited {
+        color: var(--action-color);
+      }
 
-  #navbar-name {
-    font-family: var(--font-family-special);
-  }
-
-  :where(main) a {
-    word-wrap: break-word;
-    word-break: break-word;
-  }
-
-  :where(h1, h2) {
-    font-family: var(--font-family-special);
-  }
-
-  
-  h1, h2 {
-    font-weight: 400;
-    font-style: italic;
-    color: var(--big-font-color);
-  }
-
-  h1 {
-    font-style: normal;
-    font-weight: 700;
-  }
-
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-weight: 400;
-  }
-
-  h1 {
-    font-size: 2.25rem;
-    line-height: 3.375rem;
-
-    @include breakpoint(medium) {
-      font-size: 3rem;
-      line-height: 3.625rem;
-    }
-  }
-
-  h2 {
-    font-size: 1.875rem;
-    line-height: 2.8125rem;
-
-    @include breakpoint(medium) {
-      font-size: 2.25rem;
-      line-height: 3.375rem;
-    }
-  }
-
-  h3 {
-    font-size: 1.5rem;
-    line-height: 2.25rem;
-
-    @include breakpoint(medium) {
-      font-size: 1.875rem;
-      line-height: 2.8125rem;
-    }
-  }
-
-  h4 {
-    font-size: 1.25rem;
-    line-height: 1.875rem;
-
-    @include breakpoint(medium) {
-      font-size: 1.5rem;
-      line-height: 2.25rem;
-    }
-  }
-
-  h5 {
-    font-size: 1.125rem;
-    line-height: 1.6875rem;
-
-    @include breakpoint(medium) {
-      font-size: 1.25rem;
-      line-height: 1.875rem;
-      h6 {
-        font-size: 1rem;
+      &:hover,
+      &:focus {
+        color: var(--action-color-state);
+        text-decoration: none;
       }
     }
 
-    & {
-      line-height: 1.5rem;
+    #navbar-name {
+      font-family: var(--font-family-special);
     }
 
-    @include breakpoint(medium) {
+    :where(main) a {
+      word-wrap: break-word;
+      word-break: break-word;
+    }
+
+    :where(h1, h2) {
+      font-family: var(--font-family-special);
+    }
+
+    h1,
+    h2 {
+      color: var(--big-font-color);
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    h1 {
+      font-style: normal;
+      font-weight: 700;
+    }
+
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: 400;
+    }
+
+    h1 {
+      font-size: 2.25rem;
+      line-height: 3.375rem;
+
+      @include breakpoint(medium) {
+        font-size: 3rem;
+        line-height: 3.625rem;
+      }
+    }
+
+    h2 {
+      font-size: 1.875rem;
+      line-height: 2.8125rem;
+
+      @include breakpoint(medium) {
+        font-size: 2.25rem;
+        line-height: 3.375rem;
+      }
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      line-height: 2.25rem;
+
+      @include breakpoint(medium) {
+        font-size: 1.875rem;
+        line-height: 2.8125rem;
+      }
+    }
+
+    h4 {
+      font-size: 1.25rem;
+      line-height: 1.875rem;
+
+      @include breakpoint(medium) {
+        font-size: 1.5rem;
+        line-height: 2.25rem;
+      }
+    }
+
+    h5 {
       font-size: 1.125rem;
       line-height: 1.6875rem;
+
+      @include breakpoint(medium) {
+        font-size: 1.25rem;
+        line-height: 1.875rem;
+        h6 {
+          font-size: 1rem;
+        }
+      }
+
+      & {
+        line-height: 1.5rem;
+      }
+
+      @include breakpoint(medium) {
+        font-size: 1.125rem;
+        line-height: 1.6875rem;
+      }
     }
   }
 }

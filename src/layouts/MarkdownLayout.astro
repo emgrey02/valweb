@@ -4,10 +4,19 @@ import DefaultLayout from './DefaultLayout.astro'
 const { frontmatter } = Astro.props
 ---
 
-<DefaultLayout title={frontmatter.title}>
-  <div class="container">
-    <div class="space-content my-12">
-      <slot />
+<DefaultLayout
+  title={frontmatter.title}
+  description={frontmatter.description}
+  ogImage={frontmatter.image.url}
+  twImage={frontmatter.image.url}
+>
+  <div class="container flex flex-col gap-8">
+    <div class="flex flex-col items-center gap-4">
+      <h1>{frontmatter.title}</h1>
+      <p>Written by {frontmatter.author}</p>
+      <img src={frontmatter.image.url} alt={frontmatter.image.alt} />
+      <p>Published on: {frontmatter.pubDate.toString().slice(0, 10)}</p>
     </div>
+    <slot />
   </div>
 </DefaultLayout>
