@@ -10,6 +10,8 @@ import img2 from '../assets/img/valflowers.jpeg'
 import img3 from '../assets/img/EWP-logo.jpg'
 const { img4 = '/daddario-ww.webp', img5 = '/daddario.webp' } = Astro.props
 import img6 from '../assets/img/valsmile.jpg'
+
+import { Breadcrumbs, BreadcrumbsItem } from 'accessible-astro-components'
 ---
 
 <DefaultLayout
@@ -17,6 +19,11 @@ import img6 from '../assets/img/valsmile.jpg'
   description="Learn about clarinetist Valerie Nuzzolo’s background, education, performance career, and passion for music."
 >
   <div class="container flex flex-col gap-8">
+    <Breadcrumbs>
+      <BreadcrumbsItem label="Home" href="/" />
+      <BreadcrumbsItem label="About" href="/about" />
+    </Breadcrumbs>
+
     <h1>About</h1>
     <div class="grid grid-cols-1 gap-16 md:grid-cols-2">
       <div class="flex max-w-[65ch] flex-col justify-center gap-6 text-lg">
@@ -80,7 +87,7 @@ import img6 from '../assets/img/valsmile.jpg'
         <div>
           <ul>
             <li>
-              Provides <span class="font-bold uppercase text-[var(--action-color-state)]">free</span> clinics and masterclasses
+              Provides <span class="font-bold text-[var(--action-color-state)] uppercase">free</span> clinics and masterclasses
               sponsored by D'Addario
             </li>
             <li>Designed to fit the performance needs of single reed teachers and students</li>

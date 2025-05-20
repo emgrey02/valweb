@@ -7,6 +7,8 @@ import { Image } from 'astro:assets'
 
 import img1 from '../assets/img/valcrisscross.jpg'
 import img3 from '../assets/img/valcute.jpg'
+
+import { Breadcrumbs, BreadcrumbsItem } from 'accessible-astro-components'
 ---
 
 <script is:inline src="https://cdn.jsdelivr.net/npm/add-to-calendar-button@2" async defer></script>
@@ -16,6 +18,10 @@ import img3 from '../assets/img/valcute.jpg'
   description="View Valerie Nuzzolo’s calendar for upcoming clarinet performances, masterclasses, and events across the country. Stay tuned for updates!"
 >
   <div class="container flex flex-col gap-4">
+    <Breadcrumbs>
+      <BreadcrumbsItem label="Home" href="/" />
+      <BreadcrumbsItem label="Calendar" href="/calendar" />
+    </Breadcrumbs>
     <h1>Calendar</h1>
     <Quote
       quote="Valerie’s musicianship is very diverse. She has such a great sound, a wide repertoire, and is a wonderful person to work with both in an ensemble and chamber setting."

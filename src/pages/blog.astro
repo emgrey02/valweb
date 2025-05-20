@@ -1,5 +1,7 @@
 ---
 import DefaultLayout from '../layouts/DefaultLayout.astro'
+import { Card } from 'accessible-astro-components'
+
 import { Breadcrumbs, BreadcrumbsItem } from 'accessible-astro-components'
 ---
 
@@ -8,12 +10,23 @@ import { Breadcrumbs, BreadcrumbsItem } from 'accessible-astro-components'
   description="Accessible Astro Blog"
   url={Astro.site ? `${Astro.site}/blog` : 'https://accessible-astro.dev/blog'}
 >
-  <div class="container">
+  <div class="container flex flex-col gap-4">
+    <Breadcrumbs>
+      <BreadcrumbsItem label="Home" href="/" />
+      <BreadcrumbsItem label="Blog" href="/blog" />
+    </Breadcrumbs>
     <h1>Blog</h1>
     <p>Welcome to the blog!</p>
     <p>Stay tuned for updates!</p>
     <ul>
-      <li><a href="/posts/post-1/">Post 1</a></li>
+      <li>
+        <Card
+          title="First Blog Post"
+          description="A blog about accessible web development with Astro."
+          img="/valstrut.jpeg"
+          url="/posts/post-1"
+        />
+      </li>
     </ul>
   </div>
 </DefaultLayout>

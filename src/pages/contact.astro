@@ -7,6 +7,8 @@ import { Icon } from 'astro-icon/components'
 
 import img from '../assets/img/valstrut.jpeg'
 import img2 from '../assets/img/valshoulder.jpg'
+
+import { Breadcrumbs, BreadcrumbsItem } from 'accessible-astro-components'
 ---
 
 <DefaultLayout
@@ -14,6 +16,10 @@ import img2 from '../assets/img/valshoulder.jpg'
   description="Get in touch with clarinetist Valerie Nuzzolo for performance inquiries, collaborations, or teaching opportunities."
 >
   <div class="container flex flex-col gap-8">
+    <Breadcrumbs>
+      <BreadcrumbsItem label="Home" href="/" />
+      <BreadcrumbsItem label="Contact" href="/contact" />
+    </Breadcrumbs>
     <h1>Contact</h1>
     <Image
       src={img}
@@ -67,9 +73,9 @@ import img2 from '../assets/img/valshoulder.jpg'
 
 <style>
   ul[class='flex flex-col gap-4 list'] li {
-    font-size: 1.5em;
     display: flex;
     gap: 0.3em;
+    font-size: 1.5em;
   }
   ul[class='flex flex-col gap-4 list'] li::before {
     content: '*';

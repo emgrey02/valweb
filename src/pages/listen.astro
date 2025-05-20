@@ -1,5 +1,6 @@
 ---
 import DefaultLayout from '../layouts/DefaultLayout.astro'
+import { Breadcrumbs, BreadcrumbsItem } from 'accessible-astro-components'
 ---
 
 <DefaultLayout
@@ -7,6 +8,10 @@ import DefaultLayout from '../layouts/DefaultLayout.astro'
   description="Listen to recordings of clarinetist Valerie Nuzzolo’s solo and ensemble performances, showcasing her musical artistry."
 >
   <div class="container flex flex-col gap-8">
+    <Breadcrumbs>
+      <BreadcrumbsItem label="Home" href="/" />
+      <BreadcrumbsItem label="Listen" href="/listen" />
+    </Breadcrumbs>
     <h1>Listen</h1>
     <div class="flex flex-col gap-8">
       <div class="grid grid-cols-1 gap-16 md:grid-cols-2">
