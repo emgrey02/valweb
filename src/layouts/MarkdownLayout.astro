@@ -12,6 +12,11 @@ const { frontmatter } = Astro.props
   twImage={frontmatter.image.url}
 >
   <div class="container flex flex-col gap-8">
+    <Breadcrumbs>
+      <BreadcrumbsItem label="Home" href="/" />
+      <BreadcrumbsItem label="Blog" href="/blog" />
+      <BreadcrumbsItem label={frontmatter.title} href={`/posts/post-${frontmatter.num}`} />
+    </Breadcrumbs>
     <div class="flex flex-col items-center gap-4">
       <h1>{frontmatter.title}</h1>
       <p>Written by {frontmatter.author}</p>

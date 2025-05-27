@@ -3,26 +3,30 @@ import DefaultLayout from '../layouts/DefaultLayout.astro'
 import Hero from '../components/Hero.astro'
 import Quote from '../components/Quote.astro'
 import Image from 'astro/components/Image.astro'
-import img from '../assets/img/valcross.jpeg';
+import img from '../assets/img/valcross.jpeg'
 ---
 
 <DefaultLayout title="Home">
   <Hero />
   <div class="container flex flex-col gap-8">
-    <Quote quote="Valerie is a force of nature with an unwavering commitment to conveying every note with artistic integrity and fidelity to the score and what the music calls for. One of the best people I have worked with in my career!" name="Emmanuel Berrido" job="composer"/>
-    <div class="grid grid-cols-1 gap-16 md:grid-cols-2 items-center">
-      <Image src={img} alt="" class="max-h-dvh w-auto"/>
+    <Quote
+      quote="Valerie is a force of nature with an unwavering commitment to conveying every note with artistic integrity and fidelity to the score and what the music calls for. One of the best people I have worked with in my career!"
+      name="Emmanuel Berrido"
+      job="composer"
+    />
+    <div class="grid grid-cols-1 items-center gap-16 md:grid-cols-2">
+      <Image src={img} alt="" class="max-h-dvh w-auto" />
       <div class="flex flex-col gap-8">
         <div class="flex flex-col gap-4">
-          <h3>Check out Valerie's recent & upcoming performances</h3>
+          <h4>Check out Valerie's recent & upcoming performances</h4>
           <a href="/calendar" type="button" class="button size-huge">Calendar</a>
         </div>
         <div class="flex flex-col gap-4">
-          <h3>Listen or watch Valerie perform</h3>
+          <h4>Listen or watch Valerie perform</h4>
           <a href="/listen" type="button" class="button size-huge">Listen</a>
         </div>
-        <div class="flex flex-col gap-4"> 
-          <h3>Contact Valerie</h3>
+        <div class="flex flex-col gap-4">
+          <h4>Contact Valerie</h4>
           <a href="/contact" type="button" class="button size-huge">Contact</a>
         </div>
       </div>
