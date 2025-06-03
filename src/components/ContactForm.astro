@@ -1,16 +1,17 @@
 ---
+
 ---
 
 <form
   action="https://api.web3forms.com/submit"
   method="POST"
   id="form"
-  class="needs-validation w-full"
+  class="needs-validation w-full max-w-[60ch]"
   data-astro-reload
   novalidate
 >
   <!-- Add your Web3Forms Access Key -->
-  <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+  <input type="hidden" name="access_key" value="26359505-3e9e-4edb-9b12-edb54ef32000" />
 
   <input type="checkbox" class="hidden" style="display:none" name="botcheck" />
   <div class="mb-5">
@@ -33,16 +34,16 @@
     <textarea name="message" required placeholder="Your Message" class="h-36 w-full border px-4 py-3"></textarea>
     <div class="empty-feedback invalid-feedback mt-1 text-sm text-red-400">Please enter your message.</div>
   </div>
-  <button type="submit" class="button">Send Message</button>
+  <button type="submit" class="button w-full">Send Message</button>
   <div id="result" class="mt-3 text-center"></div>
 </form>
 
 <style>
   input,
   textarea {
+    border: 2px solid var(--font-color);
     background-color: var(--background);
     color: var(--font-color);
-    border: 2px solid var(--font-color);
   }
   .invalid-feedback,
   .empty-feedback {
@@ -51,8 +52,8 @@
 
   input::placeholder,
   textarea::placeholder {
-    color: var(--font-color);
     opacity: 0.7;
+    color: var(--font-color);
   }
 
   .was-validated :placeholder-shown:invalid ~ .empty-feedback {
@@ -121,6 +122,6 @@
           })
       })
     },
-    { once: true }
+    { once: true },
   )
 </script>

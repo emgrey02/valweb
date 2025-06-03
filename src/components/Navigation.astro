@@ -104,7 +104,6 @@ import { DarkMode } from 'accessible-astro-components'
           stroke-width="3"
           stroke-linecap="round"></path>
       </svg>
-      <!-- <span id="navbar-name" class="text-2xl">Valerie Nuzzolo</span> -->
     </a>
     <div class="wrapper">
       <nav class="desktop-menu" aria-label="Main navigation desktop">
@@ -135,7 +134,7 @@ import { DarkMode } from 'accessible-astro-components'
       const mobileDesktopMenus: any = mainNav?.querySelectorAll('nav > ul')
       const currenPathname = window.location.pathname
 
-      mobileDesktopMenus.forEach((menu) => {
+      mobileDesktopMenus.forEach((menu: Element) => {
         const menuItems = [...menu.querySelectorAll('a:not([rel*="external"])')] as HTMLAnchorElement[]
 
         menuItems.forEach((menuItem) => {
@@ -167,7 +166,7 @@ import { DarkMode } from 'accessible-astro-components'
 
     // execution
     mainMenu &&
-      mainMenu.addEventListener('keydown', (event) => {
+      mainMenu.addEventListener('keydown', (event: KeyboardEvent) => {
         const element = event.target as Element
         const currentMenuItem = element.closest('li')
         const menuItems = [...mainMenu.querySelectorAll('.menu-item')]
