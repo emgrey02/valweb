@@ -1,0 +1,135 @@
+{
+  "events": [
+    {
+      "title": "The Ember Winds Project Performance",
+      "info": "With Eric R. Stewart, composer/guitarist",
+      "date": "2025-07-09",
+      "location": "Omni Hotel and Convention Center, Fort Worth, Texas",
+      "time": "17:00",
+      "timeEnd": "18:00",
+      "place": "ICA ClarinetFest, Room CC-204-AB",
+      "program": [{ "title": "Premiering a new work", "composer": "Eric R. Stewart, composer/guitarist" }],
+      "url": "https://www.instagram.com/p/DGuDFWrAuWX/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+    },
+    {
+      "title": "Conversations - Music for Clarinets +",
+      "date": "2025-05-30",
+      "location": "149 N Wellwood Ave, Lindenhurst, NY",
+      "time": "19:00",
+      "timeEnd": "21:00",
+      "place": "BACCA Arts Center",
+      "program": [
+        { "title": "Includes Beethoven, Gershwin, Gipps, Tozzola, Hailstork, and more." },
+        { "title": "A special reprise of Tri-Cycle Bicycle", "composer": "Emmanuel Berrido" }
+      ],
+      "info": "Join us for a unique evening of chamber music presented by The Ember Winds Project! $20 suggested donation.",
+      "url": "https://www.instagram.com/p/DJo74DCgHAA/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+    },
+    {
+      "title": "ICA ClarinetFest 2024",
+      "date": "2024-08-02",
+      "location": "Dublin, Ireland",
+      "time": "15:00",
+      "timeEnd": "16:00",
+      "place": "Ecocem (Tech Room)",
+      "program": [
+        { "title": "Stubborn as Hell", "composer": "Stacy Garrop" },
+        { "title": "Tri-Cycle Bicycle", "composer": "Emmanuel Berrido (world premiere)" }
+      ],
+      "url": "https://www.instagram.com/p/C9cpWQFN-ZH/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+    },
+    {
+      "title": "Courtyard Celebration",
+      "date": "2025-06-14",
+      "info": "With the Ember Winds Project",
+      "location": "St. James, New York",
+      "time": "16:00",
+      "timeEnd": "17:00",
+      "place": "The Atelier at Flowerfield"
+    },
+    {
+      "title": "Recital at International Saxophone Symposium",
+      "date": "2025-01-10",
+      "location": "Fairfax, Virginia",
+      "time": "13:00",
+      "timeEnd": "14:00",
+      "place": "George Mason University",
+      "info": "With Beth King-Bennett"
+    },
+    {
+      "title": "Clarinoveau",
+      "info": "with Plattsburg Clarinet Choir",
+      "date": "2025-02-09",
+      "location": "44 Court St, Plattsburgh, New York",
+      "time": "13:00",
+      "timeEnd": "14:00",
+      "place": "Trinity Episcopal Church"
+    },
+    {
+      "title": "Playing Post Op: A Perspective on Recovery and Performance",
+      "info": "Talk by Valerie Nuzzolo",
+      "date": "2025-03-29",
+      "location": "Hofstra University, Hempstead, New York",
+      "time": "11:00",
+      "timeEnd": "12:00",
+      "place": "CMS Northeast Conference"
+    },
+    {
+      "title": "Composers Concert",
+      "date": "2025-03-29",
+      "location": "Hofstra University, Hempstead, New York",
+      "time": "17:30",
+      "timeEnd": "18:30",
+      "place": "CMS Northeast Conference"
+    },
+    {
+      "title": "Performers Showcase Recital",
+      "date": "2025-03-30",
+      "location": "Hofstra University, Hempstead, New York",
+      "time": "09:00",
+      "timeEnd": "10:00",
+      "place": "CMS Northeast Conference"
+    },
+    {
+      "title": "Utopia Winds Performance",
+      "date": "2025-04-26",
+      "location": "Port Richmond Avenue, Staten Island, New York",
+      "time": "13:00",
+      "timeEnd": "14:00",
+      "place": "Car Free Day"
+    },
+    {
+      "title": "150th Anniversary Concert",
+      "date": "2025-06-07",
+      "location": "Kew Gardens, New York",
+      "time": "16:00",
+      "timeEnd": "17:00",
+      "place": "Maple Grove Cemetery"
+    },
+    {
+      "title": "The Compositions of Frankie DiDonato",
+      "date": "2025-06-21",
+      "location": "330 Seventh Ave, FL 7, New York, NY",
+      "time": "19:30",
+      "timeEnd": "21:00",
+      "place": "Opera America"
+    },
+    {
+      "title": "Plattsburg Clarinet Choir Concert",
+      "date": "2025-07-09",
+      "location": "Omni Hotel and Convention Center, Fort Worth, Texas",
+      "time": "15:15",
+      "timeEnd": "16:00",
+      "place": "ICA ClarinetFest, Room CC-202-B"
+    },
+    {
+      "title": "Playing Post Op: A Perspective on Recovery and Performance",
+      "info": "Talk by Valerie Nuzzolo",
+      "date": "2025-07-10",
+      "location": "Omni Hotel and Convention Center, Fort Worth, Texas",
+      "time": "15:30",
+      "timeEnd": "16:00",
+      "place": "ICA ClarinetFest, Room CC-201-B"
+    }
+  ]
+}

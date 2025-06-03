@@ -9,6 +9,33 @@ import img1 from '../assets/img/valcrisscross.jpg'
 import img3 from '../assets/img/valcute.jpg'
 
 import { Breadcrumbs, BreadcrumbsItem } from 'accessible-astro-components'
+
+import events from '../calendar/events.json'
+
+let calEvents = events.events.slice().map((event, index) => ({
+  ...event,
+  key: (index + 1).toString(),
+}))
+
+let passedEvents = calEvents
+  .filter((event) => {
+    const today = new Date()
+    const eventDate = new Date(event.date)
+    return eventDate < today
+  })
+  .sort((a, b) => {
+    return new Date(b.date).getTime() - new Date(a.date).getTime()
+  })
+
+let upcomingEvents = calEvents
+  .filter((event) => {
+    const today = new Date()
+    const eventDate = new Date(event.date)
+    return eventDate >= today
+  })
+  .sort((a, b) => {
+    return new Date(a.date).getTime() - new Date(b.date).getTime()
+  })
 ---
 
 <script is:inline src="https://cdn.jsdelivr.net/npm/add-to-calendar-button@2" async defer></script>
@@ -30,7 +57,41 @@ import { Breadcrumbs, BreadcrumbsItem } from 'accessible-astro-components'
     />
     <p>Come to one of Valerie's performances!</p>
     <div class="flex flex-col gap-8">
-      <Event
+      <h2>Upcoming Events</h2>
+      {
+        upcomingEvents.map((event) => (
+          <Event
+            title={event.title}
+            info={event.info}
+            date={event.date}
+            location={event.location}
+            time={event.time}
+            timeEnd={event.timeEnd}
+            place={event.place}
+            program={event.program}
+            url={event.url}
+            key={event.key}
+          />
+        ))
+      }
+      <h2>Past Events</h2>
+      {
+        passedEvents.map((event) => (
+          <Event
+            title={event.title}
+            info={event.info}
+            date={event.date}
+            location={event.location}
+            time={event.time}
+            timeEnd={event.timeEnd}
+            place={event.place}
+            program={event.program}
+            url={event.url}
+            key={event.key}
+          />
+        ))
+      }
+      <!-- <Event
         title="ICA ClarinetFest 2025"
         date="2025-07-09"
         location="Fort Worth, Texas"
@@ -80,7 +141,7 @@ import { Breadcrumbs, BreadcrumbsItem } from 'accessible-astro-components'
         timeEnd="19:00"
         place="The Atelier at Flowerfield"
         key="4"
-      />
+      /> -->
     </div>
 
     <div class="grid grid-cols-1 gap-8 md:grid-cols-2">

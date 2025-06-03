@@ -26,9 +26,9 @@ const formattedDate = new Date(`${date.split('-').join('/')} ${time}`).toLocaleD
 ---
 
 <script>
-  let handleClick = (event) => {
-    let calEvent = event.target
-    let eventKey = calEvent.dataset.key.split('-')[1]
+  let handleClick = (event: MouseEvent) => {
+    let calEvent = event.target as HTMLElement
+    let eventKey = calEvent.dataset.key?.split('-')[1]
 
     let programs = document.querySelectorAll('.program')
     let progArray = Array.from(programs)
@@ -42,11 +42,11 @@ const formattedDate = new Date(`${date.split('-').join('/')} ${time}`).toLocaleD
 
     if (prog) {
       prog.classList.toggle('show')
-      calEvent.firstElementChild.classList.toggle('rotate-180')
+      calEvent.firstElementChild?.classList.toggle('rotate-180')
     }
   }
 
-  let arrows = document.querySelectorAll('.arrow')
+  let arrows: NodeListOf<HTMLButtonElement> = document.querySelectorAll('.arrow')
   arrows.forEach((arrow) => arrow.addEventListener('click', handleClick))
 </script>
 
@@ -111,7 +111,7 @@ const formattedDate = new Date(`${date.split('-').join('/')} ${time}`).toLocaleD
     <div class="program" data-key={`p-${key}`}>
       <h3 class="mb-1 text-lg font-extralight">Program:</h3>
       <ul>
-        {program?.map((data) => (
+        {program?.map((data: { title: string; composer: string }) => (
           <li>
             {data.title}
             {data.composer && <span class="text-sm">- {data.composer}</span>}
