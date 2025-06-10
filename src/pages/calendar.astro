@@ -17,7 +17,7 @@ let calEvents = events.events.slice().map((event, index) => ({
   key: (index + 1).toString(),
 }))
 
-let passedEvents = calEvents
+let pastEvents = calEvents
   .filter((event) => {
     const today = new Date()
     const eventDate = new Date(event.date)
@@ -76,7 +76,7 @@ let upcomingEvents = calEvents
       }
       <h2>Past Events</h2>
       {
-        passedEvents.map((event) => (
+        pastEvents.map((event) => (
           <Event
             title={event.title}
             info={event.info}
@@ -91,57 +91,6 @@ let upcomingEvents = calEvents
           />
         ))
       }
-      <!-- <Event
-        title="ICA ClarinetFest 2025"
-        date="2025-07-09"
-        location="Fort Worth, Texas"
-        time="17:00"
-        timeEnd="18:00"
-        place="BACCA Arts Center, 149 N Wellwood Ave"
-        program={[{ title: 'Premiering a new work', composer: 'Eric R. Stewart, composer/guitarist' }]}
-        info="The Ember Winds Project (Valerie Nuzzolo and Heather O'Gara) with Eric R. Stewart, composer/guitarist"
-        url="https://www.instagram.com/p/DGuDFWrAuWX/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
-        key="1"
-      />
-      <Event
-        title="Conversations - Music for Clarinets +"
-        date="2025-05-30"
-        location="Lindenhurst, NY"
-        time="19:00"
-        timeEnd="21:00"
-        place="BACCA Arts Center, 149 N Wellwood Ave"
-        program={[
-          { title: 'Includes Beethoven, Gershwin, Gipps, Tozzola, Hailstork, and more.' },
-          { title: 'A special reprise of Tri-Cycle Bicycle', composer: 'Emmanual Berrido' },
-        ]}
-        info="Join us for a unique evening of chamber music presented by The Ember Winds Project! $20 suggested donation."
-        url="https://www.instagram.com/p/DJo74DCgHAA/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
-        key="2"
-      />
-      <Event
-        title="ICA ClarinetFest 2024"
-        date="2024-08-02"
-        location="Dublin, Ireland"
-        time="15:00"
-        timeEnd="16:00"
-        place="Ecocem (Tech Room)"
-        program={[
-          { title: 'Stubborn as Hell', composer: 'Stacy Garrop' },
-          { title: 'Tri-Cycle Bicycle', composer: 'Emmanuel Berrido (world premiere)' },
-        ]}
-        info=""
-        url="https://www.instagram.com/p/C9cpWQFN-ZH/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
-        key="3"
-      />
-      <Event
-        title="Courtyard Gala"
-        date="2024-06-22"
-        location="St. James, New York"
-        time="18:00"
-        timeEnd="19:00"
-        place="The Atelier at Flowerfield"
-        key="4"
-      /> -->
     </div>
 
     <div class="grid grid-cols-1 gap-8 md:grid-cols-2">
