@@ -6,11 +6,14 @@ import tailwindcss from '@tailwindcss/vite'
 import { fileURLToPath } from 'url'
 import path from 'path'
 
+import sitemap from '@astrojs/sitemap';
+
 // https://astro.build/config
 export default defineConfig({
   compressHTML: true,
-  site: 'https://valierienuzzolo.vercel.app/',
-  integrations: [mdx(), icon(), compress()],
+  site: 'https://www.valerienuzzolo.com',
+  integrations: [mdx(), icon(), compress(), sitemap()],
+  trailingSlash: 'never',
   vite: {
     css: {
       preprocessorOptions: {
