@@ -4,9 +4,8 @@ import compress from 'astro-compress'
 import icon from 'astro-icon'
 import tailwindcss from '@tailwindcss/vite'
 import { fileURLToPath } from 'url'
-import path from 'path'
-
-import sitemap from '@astrojs/sitemap';
+import sitemap from '@astrojs/sitemap'
+import vercel from '@astrojs/vercel'
 
 // https://astro.build/config
 export default defineConfig({
@@ -14,6 +13,7 @@ export default defineConfig({
   site: 'https://www.valerienuzzolo.com',
   integrations: [mdx(), icon(), compress(), sitemap()],
   trailingSlash: 'never',
+
   vite: {
     css: {
       preprocessorOptions: {
@@ -38,4 +38,13 @@ export default defineConfig({
       },
     },
   },
+
+  adapter: vercel({
+    webAnalytics: {
+      enabled: true,
+      isr: {
+        expiration: 60 * 60 * 24, // 1 day
+      },
+    },
+  }),
 })
