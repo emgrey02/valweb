@@ -1,19 +1,22 @@
 ---
-import { Image } from "astro:assets"
-import src from '../assets/img/val.jpeg';
+import { Image } from 'astro:assets'
+import src from '../assets/img/val.jpeg'
 ---
 
 <section class="hero">
   <div class="container">
     <div class="grid grid-cols-1 gap-16 md:grid-cols-2">
-      <div class="flex flex-col items-end justify-center gap-8 md:items-end w-full">
-        <h1 class="text-end text-6xl md:text-end lg:text-8xl w-min">
-          Valerie Nuzzolo
-        </h1>
+      <div class="flex w-full flex-col items-end justify-center gap-8 md:items-end">
+        <h1 class="w-min text-end text-6xl md:text-end lg:text-8xl">Valerie Nuzzolo</h1>
         <p class="text-3xl font-normal dark:font-extralight">Clarinetist. Educator.</p>
-        <a href='/about' type="button" class="button size-huge">Meet Valerie</a>
+        <a href="/about" type="button" class="button size-huge">Meet Valerie</a>
       </div>
-      <Image class="w-fit max-h-dvh" src={src} alt="valerie in a black dress holding her clarinet and smiling" decoding="async" />
+      <Image
+        class="h-auto max-h-dvh w-auto"
+        src={src}
+        alt="valerie in a black dress holding her clarinet and smiling"
+        decoding="async"
+      />
     </div>
   </div>
 </section>
