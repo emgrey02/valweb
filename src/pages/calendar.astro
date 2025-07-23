@@ -58,6 +58,7 @@ let upcomingEvents = calEvents
     <p>Come to one of Valerie's performances!</p>
     <div class="flex flex-col gap-8">
       <h2>Upcoming Events</h2>
+      {upcomingEvents.length == 0 && <div>Stay tuned for more events!</div>}
       {
         upcomingEvents.map((event) => (
           <Event
